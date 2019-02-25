@@ -15,9 +15,9 @@
 
 <body>
 
-  <div class="jumbotron">
-    <h1 class="text-center">Number Guesser</h1>
-    <h2 class="text-center">See if you can guess the number the computer is thinker of!</h2>
+  <div class="jumbotron" style="background-image: url(images/jonathan-larson-small-w.jpg); background-size: 100%;">
+    <h1 class="text-center display-4">Crystals Collector!</h1>
+    <h2 class="text-center">Click crystals to generate a sum equal to the number displayed</h2>
   </div>
 
   <div class="container">
@@ -26,7 +26,7 @@
       <div class="card-header">
         <div class="card-body text-center">
           <h3 class="card-title">Computer Pick</h3>
-          <h1 id="computer-pick">???</h1>
+          <h1 id="computer-pick"></h1>
         </div>
       </div>
 
@@ -34,18 +34,11 @@
         <div class="card-header">
           <div class="card-body text-center">
             <h3 class="card-title">Crystals:</h3>
-            <button id="button-1" class="btn btn-danger btn-choice" value="1">
-              1
-            </button>
-            <button id="button-2" class="btn btn-danger btn-choice" value="2">
-              2
-            </button>
-            <button id="button-3" class="btn btn-danger btn-choice" value="3">
-              3
-            </button>
-            <button id="button-4" class="btn btn-danger btn-choice" value="4">
-              4
-            </button>
+              <img class="img-thumbnail" src="images/Amethyst1_w.jpg" width="236" />
+              <img class="img-thumbnail" src="images/emerald_w.jpg" width="236" />
+              <img class="img-thumbnail" src="images/ruby_w.jpg" width="236" />      
+              <img class="img-thumbnail" src="images/topaz_w.jpg" width="236" />
+         
           </div>
         </div>
 
@@ -79,18 +72,15 @@
             var compPick = 0;
             var crystalArray = [];
             //generateCrystalArray();
-            reset();
-
-          
-           
-    
+            reset();         
+              
 
             for (var i = 0; i <crystalArray.length; i++) {
               console.log(crystalArray[i]);
             }
            //assign to the buttons the attrubutes from crystalArray
             for( var i = 0 ; i < crystalArray.length; i++) {
-              var buttonPicked = $(".btn-choice").get(i);
+              var buttonPicked = $(".img-thumbnail").get(i);
               buttonPicked.setAttribute("data-score", crystalArray[i]);
               //buttonPicked.text("Test");
               //($(".btn-choice")[i]).attr("data-score", crystalArray[i]);
@@ -104,7 +94,7 @@
 
             for (var i = 0; i < 4; i++) {
               //console.log( $(".btn-choice").get(i).attr("data-score"));
-              var genNumber = ($(".btn-choice").get(i).getAttribute("data-score"));
+              var genNumber = ($(".img-thumbnail").get(i).getAttribute("data-score"));
               console.log("Crystal Random " +  genNumber);
             } 
             
@@ -117,7 +107,7 @@
             // Here we create the on click event that gets the user's pick
 
             
-            $(".btn-choice").on("click", function() {
+            $(".img-thumbnail").on("click", function() {
 
               console.log("You clicked a button!!");
 
@@ -137,10 +127,7 @@
                 losses++;
                 $("#losses").text(losses);
                 reset();
-              }
-
-             
-             
+              }            
 
             });
 

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Number Checker</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+  <div class="jumbotron">
+    <h1 class="text-center">Number Guesser</h1>
+    <h2 class="text-center">See if you can guess the number the computer is thinker of!</h2>
+  </div>
+
+  <div class="container">
+
+    <div class="card mt-1">
+      <div class="card-header">
+        <div class="card-body text-center">
+          <h3 class="card-title">Computer Pick</h3>
+          <h1 id="computer-pick">???</h1>
+        </div>
+      </div>
+
+      <div class="card mt-1">
+        <div class="card-header">
+          <div class="card-body text-center">
+            <h3 class="card-title">Crystals:</h3>
+            <button id="button-1" class="btn btn-danger btn-choice" value="1">
+              1
+            </button>
+            <button id="button-2" class="btn btn-danger btn-choice" value="2">
+              2
+            </button>
+            <button id="button-3" class="btn btn-danger btn-choice" value="3">
+              3
+            </button>
+            <button id="button-4" class="btn btn-danger btn-choice" value="4">
+              4
+            </button>
+          </div>
+        </div>
+
+        <div class="card mt-1">
+          <div class="card-header">
+            <div class="card-body text-center">
+              <h3 class="card-title">Wins:</h3>
+              <h1 id="wins">0</h1>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card mt-1">
+          <div class="card-header">
+            <div class="card-body text-center">
+              <h3 class="card-title">Looses:</h3>
+              <h1 id="losses">0</h1>
+            </div>
+          </div>
+
+        </div>
+
+
+        <script type="text/javascript">
+          $(document).ready(function() {
+
+            var totalScore = 0;
+            var wins = 0;
+            var losses = 0;
+            var compPick = 0;
+            var crystalArray = [];
+            //generateCrystalArray();
+            reset();
+
+          
+           
+    
+
+            for (var i = 0; i <crystalArray.length; i++) {
+              console.log(crystalArray[i]);
+            }
+           //assign to the buttons the attrubutes from crystalArray
+            for( var i = 0 ; i < crystalArray.length; i++) {
+              var buttonPicked = $(".btn-choice").get(i);
+              buttonPicked.setAttribute("data-score", crystalArray[i]);
+              //buttonPicked.text("Test");
+              //($(".btn-choice")[i]).attr("data-score", crystalArray[i]);
+              //$( "li" )[ 0 ]
+              //crystalBtn.get(i).attr("data-score", crystalArray[i]);
+              //crystalBtn.get(i).text(crystalArray[i]);
+              //$("#computer-pick").text(compChoice)
+
+              //letterBtn.attr("data-letter", letters[i]);
+            } 
+
+            for (var i = 0; i < 4; i++) {
+              //console.log( $(".btn-choice").get(i).attr("data-score"));
+              var genNumber = ($(".btn-choice").get(i).getAttribute("data-score"));
+              console.log("Crystal Random " +  genNumber);
+            } 
+            
+
+            //$("#computer-pick").text(compPick);
+            
+          
+
+
+            // Here we create the on click event that gets the user's pick
+
+            
+            $(".btn-choice").on("click", function() {
+
+              console.log("You clicked a button!!");
+
+              console.log("You clicked button with score " + $(this).attr("data-score"));
+
+              totalScore = totalScore + parseInt($(this).attr("data-score"));
+              console.log("Your total score " + totalScore);
+
+              if( totalScore === compPick) {
+                console.log("You win!");
+                wins++;
+                $("#wins").text(wins);
+                reset();
+              }
+              else if (totalScore > compPick) {
+                console.log("You loose!");
+                losses++;
+                $("#losses").text(losses);
+                reset();
+              }
+
+             
+             
+
+            });
+
+
+            //generates random integer from 19 to 120
+            function generateRand120() {
+              return (Math.floor(Math.random() * 101) + 19);
+            }
+
+            //generates random integer from 1 to 12
+            function generateRand12() {        
+              return (Math.floor(Math.random() * 11) + 1);
+            }
+
+            //generateS 4-elements array with integers from 1 to 12
+            function generateCrystalArray(){
+              for(var i = 0; i < 4; i++) {
+                crystalArray.push((Math.floor(Math.random() * 11) + 1));
+              }
+              //console.log(crystalArray);
+
+            }
+
+            //resets totalScore, generates random computerPick number and random crystalArray elements
+            function reset() {
+              compPick = generateRand120();
+              $("#computer-pick").text(compPick);
+              $("#wins").text(wins);
+              $("#losses").text(losses);
+              generateCrystalArray();
+              totalScore = 0;
+
+            }
+
+          });
+
+        </script>
+
+</body>
+
+</html>

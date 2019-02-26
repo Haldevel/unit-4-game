@@ -14,19 +14,24 @@ body {
     margin-top: 20px;
 }
 
-h3 {
+h4 {
     color: rgba(255, 255, 255, 0.7)
 }
 
-h1 {
+h2 {
     color: white;
 }
 
 .crystals {
     /* font-family: 'Playfair Display', serif; */
     color: rgba(0, 0, 0, 0.6)
+
 }
 
-h5, h3, h1 {
+h5, h4, h2 {
     font-family: 'Lato', sans-serif;
+}
+
+.total-score {
+    font-size: 1.8rem;
 }

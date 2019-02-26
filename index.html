@@ -10,56 +10,60 @@
 
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css"
 
 </head>
 
-<body>
+<body style="background-image: url(assets/images/jonathan-larson-small-w.jpg); background-size: 100%;">
 
-  <div class="jumbotron" style="background-image: url(images/jonathan-larson-small-w.jpg); background-size: 100%;">
+  <div class="jumbotron" style="background: transparent;" >
     <h1 class="text-center display-4">Crystals Collector!</h1>
     <h2 class="text-center">Click crystals to generate a sum equal to the number displayed</h2>
   </div>
 
   <div class="container">
 
-    <div class="card mt-1">
+    <div class="card" style="background: transparent;">
       <div class="card-header">
-        <div class="card-body text-center">
+        <div class="card-body text-center score">
           <h3 class="card-title">Computer Pick</h3>
           <h1 id="computer-pick"></h1>
         </div>
       </div>
 
-      <div class="card mt-1">
+      <div class="card mt-1" style="background: transparent;">
         <div class="card-header">
-          <div class="card-body text-center">
-            <h3 class="card-title">Crystals:</h3>
-              <img class="img-thumbnail" src="images/Amethyst1_w.jpg" width="236" />
-              <img class="img-thumbnail" src="images/emerald_w.jpg" width="236" />
-              <img class="img-thumbnail" src="images/ruby_w.jpg" width="236" />      
-              <img class="img-thumbnail" src="images/topaz_w.jpg" width="236" />
+          <div class="card-body text-center crystals" style="background: transparent;">
+          <!--   <h3 class="card-title">Crystals:</h3> -->
+              <img class="img-thumbnail" src="assets/images/Amethyst1_w.jpg" width="236" />
+              <img class="img-thumbnail" src="assets/images/emerald_w.jpg" width="236" />
+              <img class="img-thumbnail" src="assets/images/ruby_w.jpg" width="236" />      
+              <img class="img-thumbnail" src="assets/images/topaz_w.jpg" width="236" />
          
           </div>
         </div>
-
-        <div class="card mt-1">
-          <div class="card-header">
-            <div class="card-body text-center">
-              <h3 class="card-title">Wins:</h3>
-              <h1 id="wins">0</h1>
+        <div class= "row">
+          <div class="col-md-6">
+            <div class="card mt-1 ml-4" style="background: transparent;">
+              <div class="card-header" style="background: transparent;">
+                <div class="card-body text-center score">
+                  <h3 class="card-title">Wins:</h3>
+                  <h1 id="wins">0</h1>
+                </div>
+              </div>
             </div>
           </div>
-
-        </div>
-
-        <div class="card mt-1">
-          <div class="card-header">
-            <div class="card-body text-center">
-              <h3 class="card-title">Looses:</h3>
-              <h1 id="losses">0</h1>
+        
+          <div class="col-md-6">      
+            <div class="card mt-1 mr-4" style="background: transparent;">
+              <div class="card-header">
+                <div class="card-body text-center score">
+                  <h3 class="card-title">Looses:</h3>
+                  <h1 id="losses">0</h1>
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
 
 

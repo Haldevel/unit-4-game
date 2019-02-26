@@ -1,10 +1,8 @@
-/* .crystals {
-    background-color: #000000;
-}
- */
+
 .score {
     background-color:rgba(15, 15, 15, 0.5);
     color: white;
+    
 }
 
 body {
@@ -21,9 +19,14 @@ h3 {
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
+    color: white;
 }
 
-h5, h3 {
+.crystals {
+    /* font-family: 'Playfair Display', serif; */
+    color: rgba(0, 0, 0, 0.6)
+}
+
+h5, h3, h1 {
     font-family: 'Lato', sans-serif;
 }

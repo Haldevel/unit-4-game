@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color:rgba(15, 15, 15, 0.5);
+    background-image: url("assets/images/jonathan-larson-small-w.jpg"); 
+    background-size: 100%;
 }
 
 .comp-pick {
@@ -23,8 +24,7 @@ h2 {
 }
 
 .crystals {
-    /* font-family: 'Playfair Display', serif; */
-    color: rgba(0, 0, 0, 0.6)
+    color: rgba(0, 0, 0, 0.6);    
 
 }
 
@@ -35,3 +35,52 @@ h5, h4, h2 {
 .total-score {
     font-size: 1.8rem;
 }
+
+.wins {
+    background: transparent;
+    float: right;
+}
+
+.losses {
+    background: transparent;
+    float: left;
+}
+
+.total {
+    clear: both;
+    background: transparent;
+    margin-top: 10px;
+    
+} 
+
+.images {
+    padding: 5px;
+    border: 1px solid darkgrey;
+}
+
+@media screen and (max-width: 640px) {
+
+    .losses {
+        clear: both;
+        float: none;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+   
+    .wins {
+        clear: both;
+        float: none;
+        margin: auto;
+        display: flex;
+      
+
+    }
+
+    .score {
+       
+        margin: auto;
+        
+    }
+  
+  }

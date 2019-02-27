@@ -6,31 +6,18 @@
             var losses = 0;
             var compPick = 0;
             var crystalArray = [];
-            //generateCrystalArray();
             reset();         
               
 
-            /* for (var i = 0; i <crystalArray.length; i++) {
-              console.log(crystalArray[i]);
-            } */
-            
-           //assign to the buttons the attrubutes from crystalArray
-            for( var i = 0 ; i < crystalArray.length; i++) {
-              var buttonPicked = $(".images").get(i);
-              buttonPicked.setAttribute("data-score", crystalArray[i]);
-             
-            } 
+
 
             for (var i = 0; i < 4; i++) {
-              //console.log( $(".btn-choice").get(i).attr("data-score"));
               var genNumber = ($(".images").get(i).getAttribute("data-score"));
-              console.log("Crystal Random " +  genNumber);
+              //console.log("Crystal Random " +  genNumber);
             }      
 
-            // Here we create the on click event that gets the user's pick           
+            // Create event handler on click event that gets the user's pick           
             $(".images").on("click", function() {
-
-              console.log("You clicked a button!!");
 
               console.log("You clicked button with score " + $(this).attr("data-score"));
 
@@ -59,15 +46,20 @@
               return (Math.floor(Math.random() * 101) + 19);
             }
 
+            /* 
             //generates random integer from 1 to 12
             function generateRand12() {        
               return (Math.floor(Math.random() * 11) + 1);
-            }
+            } */
 
-            //generateS 4-elements array with integers from 1 to 12
+            //generates 4-elements array with integers from 1 to 12 and assigns the generated integers to the buttons' attrubutes 
             function generateCrystalArray(){
+              crystalArray=[];
               for(var i = 0; i < 4; i++) {
                 crystalArray.push((Math.floor(Math.random() * 11) + 1));
+                var buttonPicked = $(".images").get(i);
+                buttonPicked.setAttribute("data-score", crystalArray[i]);
+                console.log("Element " + i + " " + crystalArray[i]);
               }
 
             }

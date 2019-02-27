@@ -5,11 +5,6 @@
     
 }
 
-body {
-    background-image: url("assets/images/jonathan-larson-small-w.jpg"); 
-    background-size: 100%;
-}
-
 .comp-pick {
     background: transparent;
     margin-top: 20px;
@@ -63,26 +58,17 @@ h5, h4, h2 {
 @media screen and (max-width: 640px) {
 
     .losses {
-        clear: both;
         float: none;
         margin: auto;
-        display: flex;
-        justify-content: center;
     }
    
     .wins {
-        clear: both;
         float: none;
         margin: auto;
-        display: flex;
-      
-
     }
 
-    .score {
-       
-        margin: auto;
-        
+    .score {   
+        margin: auto;    
     }
   
   }

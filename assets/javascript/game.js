@@ -10,13 +10,13 @@
             reset();         
               
 
-            for (var i = 0; i <crystalArray.length; i++) {
+            /* for (var i = 0; i <crystalArray.length; i++) {
               console.log(crystalArray[i]);
-            }
+            } */
+            
            //assign to the buttons the attrubutes from crystalArray
             for( var i = 0 ; i < crystalArray.length; i++) {
               var buttonPicked = $(".images").get(i);
-              //buttonPicked.setAttribute("data-score", crystalArray[i]);
               buttonPicked.setAttribute("data-score", crystalArray[i]);
              
             } 
@@ -69,7 +69,6 @@
               for(var i = 0; i < 4; i++) {
                 crystalArray.push((Math.floor(Math.random() * 11) + 1));
               }
-              //console.log(crystalArray);
 
             }
 
